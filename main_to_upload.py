@@ -13,7 +13,6 @@ import time
 # main window
 root = tk.Tk()
 root.title("Watermarker")
-root.geometry("300x300")
 root.resizable(width=True, height=True)
 
 
