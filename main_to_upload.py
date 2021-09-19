@@ -50,7 +50,15 @@ def watermarker(images):
         txt = Image.new('RGBA', watermark_image.size, (255, 255, 255, 0))
 
         image_font = ImageFont.truetype(font_to_use, size_to_use)
-
+        color_to_use = list(color_to_use)
+        color_to_use[0] = int(color_to_use[0])
+        color_to_use[1] = int(color_to_use[1])
+        color_to_use[2] = int(color_to_use[2])
+        try:
+            color_to_use[3] = int(color_to_use[3])
+        except:
+            pass
+        color_to_use = tuple(color_to_use)
         draw = ImageDraw.Draw(txt)
         draw.text(position_to_use, text=text_to_use,
                   fill=color_to_use, font=image_font)
